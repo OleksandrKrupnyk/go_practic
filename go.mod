@@ -3,6 +3,7 @@ module go_practic
 go 1.17
 
 require (
+	github.com/GeertJohan/go.rice v1.0.2
 	github.com/Masterminds/cookoo v1.3.0
 	github.com/Masterminds/go-fileserver v0.0.0-20150404113552-04d61ae6d130
 	github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd
@@ -11,4 +12,7 @@ require (
 	gopkg.in/urfave/cli.v1 v1.20.0
 )
 
-require gopkg.in/warnings.v0 v0.1.2 // indirect
+require (
+	github.com/daaku/go.zipexe v1.0.0 // indirect
+	gopkg.in/warnings.v0 v0.1.2 // indirect
+)
