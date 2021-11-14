@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://bispinor.net/xmlrpc.php">
+
+    <title>P-ERP &#8211; DEV DOCS</title>
+    <meta name='robots' content='noindex,follow'/>
+    <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+    <link rel='dns-prefetch' href='//s.w.org'/>
+    <link rel="alternate" type="application/rss+xml" title="P-ERP &raquo; Feed" href="https://bispinor.net/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="P-ERP &raquo; Comments Feed"
+          href="https://bispinor.net/comments/feed/"/>
+    <script type="text/javascript">
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/",
+            "svgExt": ".svg",
+            "source": {"concatemoji": "https:\/\/bispinor.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}
+        };
+        !function (a, b, c) {
+            function d(a, b) {
+                var c = String.fromCharCode;
+                l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, a), 0, 0);
+                var d = k.toDataURL();
+                l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, b), 0, 0);
+                var e = k.toDataURL();
+                return d === e
+            }
+
+            function e(a) {
+                var b;
+                if (!l || !l.fillText) return !1;
+                switch (l.textBaseline = "top", l.font = "600 32px Arial", a) {
+                    case"flag":
+                        return !(b = d([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819])) && (b = d([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]), !b);
+                    case"emoji":
+                        return b = d([55358, 56760, 9792, 65039], [55358, 56760, 8203, 9792, 65039]), !b
+                }
+                return !1
+            }
+
+            function f(a) {
+                var c = b.createElement("script");
+                c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c)
+            }
+
+            var g, h, i, j, k = b.createElement("canvas"), l = k.getContext && k.getContext("2d");
+            for (j = Array("flag", "emoji"), c.supports = {
+                everything: !0,
+                everythingExceptFlag: !0
+            }, i = 0; i < j.length; i++) c.supports[j[i]] = e(j[i]), c.supports.everything = c.supports.everything && c.supports[j[i]], "flag" !== j[i] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[j[i]]);
+            c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () {
+                c.DOMReady = !0
+            }, c.supports.everything || (h = function () {
+                c.readyCallback()
+            }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", h, !1), a.addEventListener("load", h, !1)) : (a.attachEvent("onload", h), b.attachEvent("onreadystatechange", function () {
+                "complete" === b.readyState && c.readyCallback()
+            })), g = c.source || {}, g.concatemoji ? f(g.concatemoji) : g.wpemoji && g.twemoji && (f(g.twemoji), f(g.wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='wp-block-library-css'
+          href='https://bispinor.net/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='edupress-style-css'
+          href='https://bispinor.net/wp-content/themes/edupress/edupress/style.css?ver=5.1.1' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='genericons-css'
+          href='https://bispinor.net/wp-content/themes/edupress/edupress/genericons/genericons.css?ver=3.3.1'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edupress-webfonts-css'
+          href='//fonts.googleapis.com/css?family=Roboto%3A400%2C700%7CLato%3A400%2C400i%2C700%2C700i%7CLora%3A400%2C400i%2C700%2C700i%7COpen%2BSans%3A400%2C700&#038;subset=latin%2Clatin-ext'
+          type='text/css' media='all'/>
+    <script type='text/javascript' src='https://bispinor.net/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+    <script type='text/javascript'
+            src='https://bispinor.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+    <script type='text/javascript'
+            src='https://bispinor.net/wp-content/themes/edupress/edupress/js/jquery.slicknav.min.js'></script>
+    <script type='text/javascript'
+            src='https://bispinor.net/wp-content/themes/edupress/edupress/js/superfish.min.js'></script>
+    <script type='text/javascript'
+            src='https://bispinor.net/wp-content/themes/edupress/edupress/js/jquery.flexslider.js'></script>
+    <link rel='https://api.w.org/' href='https://bispinor.net/wp-json/'/>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bispinor.net/xmlrpc.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://bispinor.net/wp-includes/wlwmanifest.xml"/>
+    <meta name="generator" content="WordPress 5.1.1"/>
+    <style type="text/css" id="wp-custom-css">
+        .theme-credit {
+            display: none;
+        }        </style>
+</head>
+
+<body class="home blog group-blog">
+
+<div id="container">
+
+    <a class="skip-link screen-reader-text" href="#site-main">Skip to content</a>
+    <header class="site-header clearfix" role="banner">
+
+        <div class="wrapper wrapper-header clearfix">
+
+            <div id="site-header-main">
+
+                <div class="site-branding clearfix">
+                    <p class="site-title"><a href="https://bispinor.net/" rel="home">P-ERP</a></p>
+                    <p class="site-description">DEV DOCS</p></div><!-- .site-branding -->
+
+
+            </div><!-- #site-header-main -->
+
+            <div id="site-header-navigation">
+
+                <div class="navbar-header">
+
+                    <div id="menu-main-slick" class="menu-main-menu-container">
+                        <ul id="menu-slide-in" class="menu">
+                            <li id="menu-item-22"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-22">
+                                <a href="https://bispinor.net/repositories-map/">Навігація по Проекту</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-359"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-359">
+                                        <a href="https://bispinor.net/local-map-vipdesign/">Локальна карта налаштувань
+                                            проекту VIPDesign</a></li>
+                                    <li id="menu-item-930"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-930">
+                                        <a href="https://bispinor.net/local-map-ukrpatent/">Локальна карта налаштувань
+                                            проекту Ukrpatent</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-27"
+                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-27">
+                                <a href="https://bispinor.net/category/%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f/">Налаштування</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-319"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-319">
+                                        <a href="https://bispinor.net/%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-kafka/">Налаштування
+                                            Kafka</a></li>
+                                    <li id="menu-item-324"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-324">
+                                        <a href="https://bispinor.net/%d0%ba%d0%b0%d1%80%d1%82%d0%b0-%d1%82%d0%be%d0%bf%d1%96%d0%ba%d1%96%d0%b2-kafka/">Карта
+                                            топіків Kafka</a></li>
+                                    <li id="menu-item-325"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-325">
+                                        <a href="https://bispinor.net/map-net-service/">Карта мережі Сервісів</a></li>
+                                    <li id="menu-item-509"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-509">
+                                        <a href="https://bispinor.net/kafka-protocol-converasation/">Протокол обміну
+                                            повідомленнями між сервісами через Кафка</a></li>
+                                    <li id="menu-item-513"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-513">
+                                        <a href="https://bispinor.net/kafka-protocol-codes/">Стандартизовані Коди
+                                            Відповідей Повідомлень мікросервісів</a></li>
+                                    <li id="menu-item-1010"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1010">
+                                        <a href="https://bispinor.net/text-string-formats/">Формати формування текстових
+                                            повідомлень</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-70"
+                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-70">
+                                <a href="https://bispinor.net/category/testing/">Тестування</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-71"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-71">
+                                        <a href="https://bispinor.net/category/testing/registration-of-test-documentation/">Оформлення
+                                            тестової документації</a></li>
+                                    <li id="menu-item-946"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-946">
+                                        <a href="https://bispinor.net/worki-with-jenkins-alure-report/">Робота з Jenkins
+                                            ( Огляд результатів тестування)</a></li>
+                                    <li id="menu-item-947"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-947">
+                                        <a href="https://bispinor.net/work-with-jenkins-manual/">Робота з Jenkins (
+                                            Запуск тестів для сервісів у ручному режимі)</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-65"
+                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-65">
+                                <a href="https://bispinor.net/category/rules/">Правила</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-132"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-132">
+                                        <a href="https://bispinor.net/glossary/">Глосарій термінів (Умовності)</a></li>
+                                    <li id="menu-item-66"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-66">
+                                        <a href="https://bispinor.net/category/rules/dev-policy/">Правила роботи з
+                                            кодом</a></li>
+                                    <li id="menu-item-69"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-69">
+                                        <a href="https://bispinor.net/category/rules/rules-driving-project/">Правила
+                                            ведення проекту</a></li>
+                                    <li id="menu-item-76"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76">
+                                        <a href="https://bispinor.net/category/rules/rules-of-documentation/">Правила
+                                            оформлення документації</a></li>
+                                    <li id="menu-item-168"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168"><a
+                                            href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B4%D1%96%D0%B2_%D1%81%D1%82%D0%B0%D0%BD%D1%83_HTTP">Список
+                                        кодів стану HTTP</a></li>
+                                    <li id="menu-item-781"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-781">
+                                        <a href="https://bispinor.net/vue-%d0%ba%d0%be%d0%bc%d0%bf%d0%be%d0%bd%d0%b5%d0%bd%d1%82%d0%b0-%d0%b1%d0%b0%d0%b7%d0%be%d0%b2%d1%96-%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d0%b0-%d1%84%d0%be%d1%80%d0%bc%d1%83%d0%b2%d0%b0%d0%bd%d0%bd/">Vue
+                                            Компонента Базові правила формування</a></li>
+                                    <li id="menu-item-1272"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1272">
+                                        <a href="https://bispinor.net/%d0%b2-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%b5-%d0%bd%d0%b0%d0%b4-%d0%b2%d1%8b%d0%b3%d1%80%d1%83%d0%b7%d0%ba%d0%be%d0%b9-%d0%b4%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d0%bd%d0%b0-%d1%81%d0%b5%d1%80%d0%b2%d0%b5/">В
+                                            работе над выгрузкой данных на сервер</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-34"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-34">
+                                <a href="https://bispinor.net/roadmap/">Версії сервісів</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-292"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-292">
+                                        <a href="https://bispinor.net/req-common/">Загальні вимоги до написання
+                                            мікросервісів</a></li>
+                                    <li id="menu-item-149"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-149">
+                                        <a href="https://bispinor.net/category/%d0%bf%d1%80%d0%be%d0%bf%d0%be%d0%b7%d0%b8%d1%86%d1%96%d1%97-%d0%b7%d0%bc%d1%96%d0%bd%d0%b8-%d1%81%d0%b5%d1%80%d0%b2%d1%96%d1%81%d1%96%d0%b2/">Пропозиції
+                                            зміни сервісів</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-96"
+                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-96">
+                                <a href="https://bispinor.net/category/api/">API</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-350"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-350">
+                                        <a href="https://bispinor.net/userwebserverapi/">UserWebServerAPI</a></li>
+                                    <li id="menu-item-99"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-99"><a
+                                            href="https://bispinor.net/notify-service/">Notify Service API</a></li>
+                                    <li id="menu-item-144"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-144">
+                                        <a href="https://bispinor.net/ggnservice/">GGNService API</a></li>
+                                    <li id="menu-item-145"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-145">
+                                        <a href="https://bispinor.net/calendarservice/">CalendarService API</a></li>
+                                    <li id="menu-item-146"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-146">
+                                        <a href="https://bispinor.net/emailservice/">EmailService API</a></li>
+                                    <li id="menu-item-317"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-317">
+                                        <a href="https://bispinor.net/settingserviceapi/">SettingServiceAPI</a></li>
+                                    <li id="menu-item-823"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-823">
+                                        <a href="https://bispinor.net/user-active-service/">UserActiveService API</a>
+                                    </li>
+                                    <li id="menu-item-318"
+                                        class="menu-item menu-item-type-post_type menu-item-object-post menu-item-318">
+                                        <a href="https://bispinor.net/bottelegramserviceapi/">BotTelegramServiceAPI</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- .navbar-header -->
+
+                <nav id="menu-main" role="navigation">
+                    <ul id="menu-main-menu" class="navbar-nav dropdown sf-menu clearfix">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-22">
+                            <a href="https://bispinor.net/repositories-map/">Навігація по Проекту</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-359"><a
+                                        href="https://bispinor.net/local-map-vipdesign/">Локальна карта налаштувань
+                                    проекту VIPDesign</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-930"><a
+                                        href="https://bispinor.net/local-map-ukrpatent/">Локальна карта налаштувань
+                                    проекту Ukrpatent</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-27">
+                            <a href="https://bispinor.net/category/%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f/">Налаштування</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-319"><a
+                                        href="https://bispinor.net/%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-kafka/">Налаштування
+                                    Kafka</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-324"><a
+                                        href="https://bispinor.net/%d0%ba%d0%b0%d1%80%d1%82%d0%b0-%d1%82%d0%be%d0%bf%d1%96%d0%ba%d1%96%d0%b2-kafka/">Карта
+                                    топіків Kafka</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-325"><a
+                                        href="https://bispinor.net/map-net-service/">Карта мережі Сервісів</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-509"><a
+                                        href="https://bispinor.net/kafka-protocol-converasation/">Протокол обміну
+                                    повідомленнями між сервісами через Кафка</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-513"><a
+                                        href="https://bispinor.net/kafka-protocol-codes/">Стандартизовані Коди
+                                    Відповідей Повідомлень мікросервісів</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1010"><a
+                                        href="https://bispinor.net/text-string-formats/">Формати формування текстових
+                                    повідомлень</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-70">
+                            <a href="https://bispinor.net/category/testing/">Тестування</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-71"><a
+                                        href="https://bispinor.net/category/testing/registration-of-test-documentation/">Оформлення
+                                    тестової документації</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-946"><a
+                                        href="https://bispinor.net/worki-with-jenkins-alure-report/">Робота з Jenkins (
+                                    Огляд результатів тестування)</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-947"><a
+                                        href="https://bispinor.net/work-with-jenkins-manual/">Робота з Jenkins ( Запуск
+                                    тестів для сервісів у ручному режимі)</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-65">
+                            <a href="https://bispinor.net/category/rules/">Правила</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-132"><a
+                                        href="https://bispinor.net/glossary/">Глосарій термінів (Умовності)</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-66"><a
+                                        href="https://bispinor.net/category/rules/dev-policy/">Правила роботи з
+                                    кодом</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-69"><a
+                                        href="https://bispinor.net/category/rules/rules-driving-project/">Правила
+                                    ведення проекту</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a
+                                        href="https://bispinor.net/category/rules/rules-of-documentation/">Правила
+                                    оформлення документації</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168"><a
+                                        href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B4%D1%96%D0%B2_%D1%81%D1%82%D0%B0%D0%BD%D1%83_HTTP">Список
+                                    кодів стану HTTP</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-781"><a
+                                        href="https://bispinor.net/vue-%d0%ba%d0%be%d0%bc%d0%bf%d0%be%d0%bd%d0%b5%d0%bd%d1%82%d0%b0-%d0%b1%d0%b0%d0%b7%d0%be%d0%b2%d1%96-%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d0%b0-%d1%84%d0%be%d1%80%d0%bc%d1%83%d0%b2%d0%b0%d0%bd%d0%bd/">Vue
+                                    Компонента Базові правила формування</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1272"><a
+                                        href="https://bispinor.net/%d0%b2-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%b5-%d0%bd%d0%b0%d0%b4-%d0%b2%d1%8b%d0%b3%d1%80%d1%83%d0%b7%d0%ba%d0%be%d0%b9-%d0%b4%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d0%bd%d0%b0-%d1%81%d0%b5%d1%80%d0%b2%d0%b5/">В
+                                    работе над выгрузкой данных на сервер</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-34">
+                            <a href="https://bispinor.net/roadmap/">Версії сервісів</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-292"><a
+                                        href="https://bispinor.net/req-common/">Загальні вимоги до написання
+                                    мікросервісів</a></li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-149"><a
+                                        href="https://bispinor.net/category/%d0%bf%d1%80%d0%be%d0%bf%d0%be%d0%b7%d0%b8%d1%86%d1%96%d1%97-%d0%b7%d0%bc%d1%96%d0%bd%d0%b8-%d1%81%d0%b5%d1%80%d0%b2%d1%96%d1%81%d1%96%d0%b2/">Пропозиції
+                                    зміни сервісів</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-96">
+                            <a href="https://bispinor.net/category/api/">API</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-350"><a
+                                        href="https://bispinor.net/userwebserverapi/">UserWebServerAPI</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-99"><a
+                                        href="https://bispinor.net/notify-service/">Notify Service API</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-144"><a
+                                        href="https://bispinor.net/ggnservice/">GGNService API</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-145"><a
+                                        href="https://bispinor.net/calendarservice/">CalendarService API</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-146"><a
+                                        href="https://bispinor.net/emailservice/">EmailService API</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-317"><a
+                                        href="https://bispinor.net/settingserviceapi/">SettingServiceAPI</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-823"><a
+                                        href="https://bispinor.net/user-active-service/">UserActiveService API</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-318"><a
+                                        href="https://bispinor.net/bottelegramserviceapi/">BotTelegramServiceAPI</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav><!-- #menu-main -->
+
+            </div><!-- #site-header-navigation -->
+
+        </div><!-- .wrapper .wrapper-header .clearfix -->
+
+    </header><!-- .site-header -->
+    <div id="site-main" class="content-home">
+
+        <div class="wrapper wrapper-main clearfix">
+
+            <div class="wrapper-frame clearfix">
+
+                <main id="site-content" class="site-main" role="main">
+
+                    <div class="site-content-wrapper clearfix">
+
+
+                        <p class="widget-title">Recent Posts</p>
+                        <ul id="recent-posts" class="ilovewp-posts ilovewp-posts-archive clearfix">
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-1 clearfix post-1380 post type-post status-publish format-standard has-post-thumbnail hentry category-dev-policy tag-wipo tag-xml">
+
+                                <article id="post-1380">
+
+                                    <div class="post-cover-wrapper">
+                                        <div class="post-cover">
+                                            <a href="https://bispinor.net/tag-tranfd-for-wipo-xml/"
+                                               title="Сповіщення в ВОІВ надання охорони після остаточної відмови. Тег TRANFD">
+                                                <img width="240" height="180"
+                                                     src="https://bispinor.net/wp-content/uploads/2021/10/wipo-240x180.jpg"
+                                                     class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                                     alt=""/> </a>
+                                        </div><!-- .post-cover -->
+                                    </div><!-- .post-cover-wrapper -->
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a href="https://bispinor.net/tag-tranfd-for-wipo-xml/"
+                                                                  rel="bookmark">Сповіщення в ВОІВ надання охорони після
+                                            остаточної відмови. Тег TRANFD</a></h2>
+                                        <p class="post-excerpt">Приклад формування сповіщення TRANFD – Операція:
+                                            тимчасова відмова: Грунтуючись на вмісті XML файлів повідомлень за період
+                                            2011-2021 роки до ВОІВ від Укрпатенту приблизно 68 таких повідомлень.
+                                            TRAEDAT &#8211; Effective date... </p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/krupnik_aukr-net/"
+                                                    title="Posts by Олександр" rel="author">Олександр</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-11-08T11:34:22+02:00"><a
+                                                    href="https://bispinor.net/tag-tranfd-for-wipo-xml/"
+                                                    title="Сповіщення в ВОІВ надання охорони після остаточної відмови. Тег TRANFD">08/11/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/rules/dev-policy/"
+                                                    rel="category tag">Правила роботи з кодом</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-1380 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-2 clearfix post-1372 post type-post status-publish format-standard has-post-thumbnail hentry category-dev-policy tag-wipo tag-xml">
+
+                                <article id="post-1372">
+
+                                    <div class="post-cover-wrapper">
+                                        <div class="post-cover">
+                                            <a href="https://bispinor.net/tag-tranfi-for-wipo-xml/"
+                                               title="Сповіщення в ВОІВ надання охорони після відмови або остаточна відмова. Тег TRANFI">
+                                                <img width="240" height="180"
+                                                     src="https://bispinor.net/wp-content/uploads/2021/10/wipo-240x180.jpg"
+                                                     class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                                     alt=""/> </a>
+                                        </div><!-- .post-cover -->
+                                    </div><!-- .post-cover-wrapper -->
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a href="https://bispinor.net/tag-tranfi-for-wipo-xml/"
+                                                                  rel="bookmark">Сповіщення в ВОІВ надання охорони після
+                                            відмови або остаточна відмова. Тег TRANFI</a></h2>
+                                        <p class="post-excerpt">Приклад формування сповіщення TRANFI – Операція:
+                                            тимчасова відмова: TRAEDAT &#8211; Effective date of a transaction version
+                                            Format; YYYYMMDD &#8211; Завжди рівне 20110101. Версія повідомлення.
+                                            Спрощено за рішенням. OFFREF&nbsp;– Office’s reference... </p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/krupnik_aukr-net/"
+                                                    title="Posts by Олександр" rel="author">Олександр</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-11-03T18:18:30+02:00"><a
+                                                    href="https://bispinor.net/tag-tranfi-for-wipo-xml/"
+                                                    title="Сповіщення в ВОІВ надання охорони після відмови або остаточна відмова. Тег TRANFI">03/11/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/rules/dev-policy/"
+                                                    rel="category tag">Правила роботи з кодом</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-1372 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-1 clearfix post-1356 post type-post status-publish format-standard has-post-thumbnail hentry category-dev-policy tag-wipo tag-xml">
+
+                                <article id="post-1356">
+
+                                    <div class="post-cover-wrapper">
+                                        <div class="post-cover">
+                                            <a href="https://bispinor.net/tag-tranrf-for-wipo-xml/"
+                                               title="Сповіщення в ВОІВ попередня відмова. Тег TRANRF">
+                                                <img width="240" height="180"
+                                                     src="https://bispinor.net/wp-content/uploads/2021/10/wipo-240x180.jpg"
+                                                     class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                                     alt=""/> </a>
+                                        </div><!-- .post-cover -->
+                                    </div><!-- .post-cover-wrapper -->
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a href="https://bispinor.net/tag-tranrf-for-wipo-xml/"
+                                                                  rel="bookmark">Сповіщення в ВОІВ попередня відмова.
+                                            Тег TRANRF</a></h2>
+                                        <p class="post-excerpt">Приклад формування сповіщення TRANRF – Операція:
+                                            тимчасова відмова: TRAEDAT &#8211; Effective date of a transaction version
+                                            Format; YYYYMMDD &#8211; Завжди рівне 20110101. Версія повідомлення.
+                                            Спрощено за рішенням. OFFREF&nbsp;– Office’s reference... </p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/krupnik_aukr-net/"
+                                                    title="Posts by Олександр" rel="author">Олександр</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-10-27T11:48:05+02:00"><a
+                                                    href="https://bispinor.net/tag-tranrf-for-wipo-xml/"
+                                                    title="Сповіщення в ВОІВ попередня відмова. Тег TRANRF">27/10/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/rules/dev-policy/"
+                                                    rel="category tag">Правила роботи з кодом</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-1356 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-2 clearfix post-1349 post type-post status-publish format-standard has-post-thumbnail hentry category-dev-policy tag-wipo tag-xml">
+
+                                <article id="post-1349">
+
+                                    <div class="post-cover-wrapper">
+                                        <div class="post-cover">
+                                            <a href="https://bispinor.net/tag-trangp-for-wipo-xml/"
+                                               title="Сповіщення в ВОІВ про надання охорони. Тег TRANGP">
+                                                <img width="240" height="180"
+                                                     src="https://bispinor.net/wp-content/uploads/2021/10/wipo-240x180.jpg"
+                                                     class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                                     alt=""/> </a>
+                                        </div><!-- .post-cover -->
+                                    </div><!-- .post-cover-wrapper -->
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a href="https://bispinor.net/tag-trangp-for-wipo-xml/"
+                                                                  rel="bookmark">Сповіщення в ВОІВ про надання охорони.
+                                            Тег TRANGP</a></h2>
+                                        <p class="post-excerpt">Приклад формування сповіщення TRANGP &#8211; надання
+                                            охорони: TRAEDAT &#8211; Effective date of a transaction version Format;
+                                            YYYYMMDD &#8211; Завжди рівне 20110101. Версія повідомлення. Спрощено за
+                                            рішенням.OFFREF &#8211; Office&#8217;s reference &#8211;... </p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/krupnik_aukr-net/"
+                                                    title="Posts by Олександр" rel="author">Олександр</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-10-27T11:00:08+02:00"><a
+                                                    href="https://bispinor.net/tag-trangp-for-wipo-xml/"
+                                                    title="Сповіщення в ВОІВ про надання охорони. Тег TRANGP">27/10/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/rules/dev-policy/"
+                                                    rel="category tag">Правила роботи з кодом</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-1349 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-1 clearfix post-1343 post type-post status-publish format-standard hentry category-dev-policy tag-wipo tag-xml">
+
+                                <article id="post-1343">
+
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a href="https://bispinor.net/form-xml-for-wipo/"
+                                                                  rel="bookmark">Формування XML для ВОІВ (WIPO)</a></h2>
+                                        <p class="post-excerpt">Для формування повідомлення про рішення, що до
+                                            міжнародних реєстрацій від Укрпатенту слід сформувати два файли:
+                                            BYYMMDD.zip1 BYYMMDDN.xml2 Виконати завантаження файлів на ФТП-сервер
+                                            (ftp://193.5.93.49/input).1,2 &#8211; B &#8211; літера латинського алфвіту;
+                                            YY... </p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/krupnik_aukr-net/"
+                                                    title="Posts by Олександр" rel="author">Олександр</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-10-27T10:02:13+02:00"><a
+                                                    href="https://bispinor.net/form-xml-for-wipo/"
+                                                    title="Формування XML для ВОІВ (WIPO)">27/10/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/rules/dev-policy/"
+                                                    rel="category tag">Правила роботи з кодом</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-1343 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-2 clearfix post-1334 post type-post status-publish format-standard hentry category-2 tag-release tag-52">
+
+                                <article id="post-1334">
+
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a
+                                                href="https://bispinor.net/update-release-userwebserver/"
+                                                rel="bookmark">Оновлення релізу UserWebServer</a></h2>
+                                        <p class="post-excerpt">Для оновлення &#8220;релізу&#8221; сервісу UserWebServer
+                                            в докер контейнері слід підключитися до відповідного докера контейнера, що
+                                            працює на сервері з ІP адресами 10.0.23.10 або 10.0.23.1. В консолі докера
+                                            виконати наступні команди... </p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/krupnik_aukr-net/"
+                                                    title="Posts by Олександр" rel="author">Олександр</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-08-25T18:33:30+02:00"><a
+                                                    href="https://bispinor.net/update-release-userwebserver/"
+                                                    title="Оновлення релізу UserWebServer">25/08/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f/"
+                                                    rel="category tag">Налаштування</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-1334 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-1 clearfix post-302 post type-post status-publish format-standard hentry category-dev-policy">
+
+                                <article id="post-302">
+
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a
+                                                href="https://bispinor.net/%d0%bd%d0%b0%d1%81%d1%82%d1%80%d0%be%d0%b9%d0%ba%d0%b0-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80%d0%b0/"
+                                                rel="bookmark">Настройка сервера</a></h2>
+                                        <p class="post-excerpt">PostgreSQL https://github.com/zalando/patroni
+                                            https://www.pgbouncer.org/</p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/kulych9gmail-com/"
+                                                    title="Posts by Артур" rel="author">Артур</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-05-07T15:32:22+02:00"><a
+                                                    href="https://bispinor.net/%d0%bd%d0%b0%d1%81%d1%82%d1%80%d0%be%d0%b9%d0%ba%d0%b0-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80%d0%b0/"
+                                                    title="Настройка сервера">07/05/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/rules/dev-policy/"
+                                                    rel="category tag">Правила роботи з кодом</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-302 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-2 clearfix post-1319 post type-post status-publish format-standard hentry category-dev-policy">
+
+                                <article id="post-1319">
+
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a
+                                                href="https://bispinor.net/%d0%ba%d0%be%d0%bc%d0%bf%d0%be%d0%bd%d0%b5%d0%bd%d1%82%d0%b0-%d0%bc%d0%b5%d0%bd%d1%8e-%d1%81%d0%b0%d0%b9%d1%82%d1%83/"
+                                                rel="bookmark">Компонента меню сайту</a></h2>
+                                        <p class="post-excerpt">Вхідні параметри: user-id: Numberttl: Numberupdate-url:
+                                            String user-id &#8211; Унікальний ідентифікатор користувача ttl &#8211; Час
+                                            життя меню в хвилинах (проміжок часу на який меню кешується) update-url
+                                            &#8211; URI для отримання актуального... </p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/rostanetsgmail-com/"
+                                                    title="Posts by Ярослав" rel="author">Ярослав</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-04-06T17:30:05+02:00"><a
+                                                    href="https://bispinor.net/%d0%ba%d0%be%d0%bc%d0%bf%d0%be%d0%bd%d0%b5%d0%bd%d1%82%d0%b0-%d0%bc%d0%b5%d0%bd%d1%8e-%d1%81%d0%b0%d0%b9%d1%82%d1%83/"
+                                                    title="Компонента меню сайту">06/04/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/rules/dev-policy/"
+                                                    rel="category tag">Правила роботи з кодом</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-1319 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-1 clearfix post-1317 post type-post status-publish format-standard hentry category-dev-policy">
+
+                                <article id="post-1317">
+
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a
+                                                href="https://bispinor.net/%d0%ba%d0%be%d0%bc%d0%bf%d0%be%d0%bd%d0%b5%d0%bd%d1%82%d0%b0-%d0%bc%d0%b0%d1%81%d0%be%d0%b2%d0%be%d0%b3%d0%be-%d0%bd%d0%b0%d0%ba%d0%bb%d0%b0%d0%b4%d0%b0%d0%bd%d0%bd%d1%8f-%d0%b5%d1%86%d0%bf/"
+                                                rel="bookmark">Компонента масового накладання ЕЦП</a></h2>
+                                        <p class="post-excerpt">Приклад: Для коректної роботи компоненти необхідно:
+                                            передати параметри в якості data-атрибутів HTML &#8211; елементу checkbox і
+                                            додати клас js-lg-checkbox. Додати клас js-eds-subscribe на кнопку виклику
+                                            компоненти Вивести компоненту на сторінку</p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/rostanetsgmail-com/"
+                                                    title="Posts by Ярослав" rel="author">Ярослав</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-04-01T13:16:41+02:00"><a
+                                                    href="https://bispinor.net/%d0%ba%d0%be%d0%bc%d0%bf%d0%be%d0%bd%d0%b5%d0%bd%d1%82%d0%b0-%d0%bc%d0%b0%d1%81%d0%be%d0%b2%d0%be%d0%b3%d0%be-%d0%bd%d0%b0%d0%ba%d0%bb%d0%b0%d0%b4%d0%b0%d0%bd%d0%bd%d1%8f-%d0%b5%d1%86%d0%bf/"
+                                                    title="Компонента масового накладання ЕЦП">01/04/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/rules/dev-policy/"
+                                                    rel="category tag">Правила роботи з кодом</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-1317 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                            <li class="ilovewp-post ilovewp-post-archive ilovewp-post-2 clearfix post-1311 post type-post status-publish format-standard hentry category-dev-policy">
+
+                                <article id="post-1311">
+
+
+                                    <div class="post-preview">
+                                        <h2 class="title-post"><a
+                                                href="https://bispinor.net/%d0%ba%d0%be%d0%bc%d0%bf%d0%be%d0%bd%d0%b5%d0%bd%d1%82%d0%b0-%d0%bf%d0%be%d1%80%d1%96%d0%b2%d0%bd%d1%8f%d0%bd%d0%bd%d1%8f-%d1%82%d0%be%d0%b2%d0%b0%d1%80%d1%96%d0%b2-%d1%82%d0%b0-%d0%bf%d0%be%d1%81-2/"
+                                                rel="bookmark">Компонента порівняння товарів та послуг (виставковий
+                                            приорітет)</a></h2>
+                                        <p class="post-excerpt">Вхідні параметри: priority_claim_num &#8211; номер
+                                            приорітетної заявки priority_claim &#8211; список формулювань приорітетної
+                                            заявки expo_options &#8211; JSON 230 коду інід links &#8211; об&#8217;єкт
+                                            url`ів з ключами save, full, partial &#8211; для... </p>
+                                        <p class="post-meta">
+                                            <span class="posted-by">By <a
+                                                    href="https://bispinor.net/author/rostanetsgmail-com/"
+                                                    title="Posts by Ярослав" rel="author">Ярослав</a></span>
+                                            <span class="posted-on">Published <time class="entry-date published"
+                                                                                    datetime="2021-02-08T14:06:34+02:00"><a
+                                                    href="https://bispinor.net/%d0%ba%d0%be%d0%bc%d0%bf%d0%be%d0%bd%d0%b5%d0%bd%d1%82%d0%b0-%d0%bf%d0%be%d1%80%d1%96%d0%b2%d0%bd%d1%8f%d0%bd%d0%bd%d1%8f-%d1%82%d0%be%d0%b2%d0%b0%d1%80%d1%96%d0%b2-%d1%82%d0%b0-%d0%bf%d0%be%d1%81-2/"
+                                                    title="Компонента порівняння товарів та послуг (виставковий приорітет)">08/02/2021</a></time></span>
+                                            <span class="post-meta-category"><a
+                                                    href="https://bispinor.net/category/rules/dev-policy/"
+                                                    rel="category tag">Правила роботи з кодом</a></span>
+                                        </p><!-- .post-meta -->
+                                    </div><!-- .post-preview -->
+
+                                </article><!-- #post-1311 -->
+
+                            </li><!-- .ilovewp-post .ilovewp-post-archive .clearfix -->
+
+
+                        </ul><!-- .ilovewp-posts .ilovewp-posts-archive -->
+
+
+                        <nav class="navigation posts-navigation" role="navigation">
+                            <h2 class="screen-reader-text">Posts navigation</h2>
+                            <div class="nav-links">
+                                <div class="nav-previous"><a href="https://bispinor.net/page/2/"><span
+                                        class="nav-link-label"><span class="genericon genericon-previous"></span></span>Older
+                                    Posts</a></div>
+                            </div>
+                        </nav>
+
+                    </div><!-- .site-content-wrapper .clearfix -->
+
+                </main><!-- #site-content -->
+
+
+                <aside id="site-aside" role="complementary">
+
+                    <div class="site-aside-wrapper clearfix">
+
+                        <div id="search-2" class="widget widget_search">
+                            <form role="search" method="get" class="search-form" action="https://bispinor.net/">
+                                <label>
+                                    <span class="screen-reader-text">Search for:</span>
+                                    <input type="search" class="search-field" placeholder="Search &hellip;" value=""
+                                           name="s"/>
+                                </label>
+                                <input type="submit" class="search-submit" value="Search"/>
+                            </form>
+                        </div>
+                        <div id="nav_menu-3" class="widget widget_nav_menu">
+                            <div class="menu-main-menu-container">
+                                <ul id="menu-main-menu-1" class="menu">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-22">
+                                        <a href="https://bispinor.net/repositories-map/">Навігація по Проекту</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-359">
+                                                <a href="https://bispinor.net/local-map-vipdesign/">Локальна карта
+                                                    налаштувань проекту VIPDesign</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-930">
+                                                <a href="https://bispinor.net/local-map-ukrpatent/">Локальна карта
+                                                    налаштувань проекту Ukrpatent</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-27">
+                                        <a href="https://bispinor.net/category/%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f/">Налаштування</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-319">
+                                                <a href="https://bispinor.net/%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-kafka/">Налаштування
+                                                    Kafka</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-324">
+                                                <a href="https://bispinor.net/%d0%ba%d0%b0%d1%80%d1%82%d0%b0-%d1%82%d0%be%d0%bf%d1%96%d0%ba%d1%96%d0%b2-kafka/">Карта
+                                                    топіків Kafka</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-325">
+                                                <a href="https://bispinor.net/map-net-service/">Карта мережі
+                                                    Сервісів</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-509">
+                                                <a href="https://bispinor.net/kafka-protocol-converasation/">Протокол
+                                                    обміну повідомленнями між сервісами через Кафка</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-513">
+                                                <a href="https://bispinor.net/kafka-protocol-codes/">Стандартизовані
+                                                    Коди Відповідей Повідомлень мікросервісів</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1010">
+                                                <a href="https://bispinor.net/text-string-formats/">Формати формування
+                                                    текстових повідомлень</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-70">
+                                        <a href="https://bispinor.net/category/testing/">Тестування</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-71">
+                                                <a href="https://bispinor.net/category/testing/registration-of-test-documentation/">Оформлення
+                                                    тестової документації</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-946">
+                                                <a href="https://bispinor.net/worki-with-jenkins-alure-report/">Робота з
+                                                    Jenkins ( Огляд результатів тестування)</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-947">
+                                                <a href="https://bispinor.net/work-with-jenkins-manual/">Робота з
+                                                    Jenkins ( Запуск тестів для сервісів у ручному режимі)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-65">
+                                        <a href="https://bispinor.net/category/rules/">Правила</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-132">
+                                                <a href="https://bispinor.net/glossary/">Глосарій термінів
+                                                    (Умовності)</a></li>
+                                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-66">
+                                                <a href="https://bispinor.net/category/rules/dev-policy/">Правила роботи
+                                                    з кодом</a></li>
+                                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-69">
+                                                <a href="https://bispinor.net/category/rules/rules-driving-project/">Правила
+                                                    ведення проекту</a></li>
+                                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76">
+                                                <a href="https://bispinor.net/category/rules/rules-of-documentation/">Правила
+                                                    оформлення документації</a></li>
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168">
+                                                <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B4%D1%96%D0%B2_%D1%81%D1%82%D0%B0%D0%BD%D1%83_HTTP">Список
+                                                    кодів стану HTTP</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-781">
+                                                <a href="https://bispinor.net/vue-%d0%ba%d0%be%d0%bc%d0%bf%d0%be%d0%bd%d0%b5%d0%bd%d1%82%d0%b0-%d0%b1%d0%b0%d0%b7%d0%be%d0%b2%d1%96-%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d0%b0-%d1%84%d0%be%d1%80%d0%bc%d1%83%d0%b2%d0%b0%d0%bd%d0%bd/">Vue
+                                                    Компонента Базові правила формування</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1272">
+                                                <a href="https://bispinor.net/%d0%b2-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%b5-%d0%bd%d0%b0%d0%b4-%d0%b2%d1%8b%d0%b3%d1%80%d1%83%d0%b7%d0%ba%d0%be%d0%b9-%d0%b4%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-%d0%bd%d0%b0-%d1%81%d0%b5%d1%80%d0%b2%d0%b5/">В
+                                                    работе над выгрузкой данных на сервер</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-34">
+                                        <a href="https://bispinor.net/roadmap/">Версії сервісів</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-292">
+                                                <a href="https://bispinor.net/req-common/">Загальні вимоги до написання
+                                                    мікросервісів</a></li>
+                                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-149">
+                                                <a href="https://bispinor.net/category/%d0%bf%d1%80%d0%be%d0%bf%d0%be%d0%b7%d0%b8%d1%86%d1%96%d1%97-%d0%b7%d0%bc%d1%96%d0%bd%d0%b8-%d1%81%d0%b5%d1%80%d0%b2%d1%96%d1%81%d1%96%d0%b2/">Пропозиції
+                                                    зміни сервісів</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-96">
+                                        <a href="https://bispinor.net/category/api/">API</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-350">
+                                                <a href="https://bispinor.net/userwebserverapi/">UserWebServerAPI</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-99">
+                                                <a href="https://bispinor.net/notify-service/">Notify Service API</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-144">
+                                                <a href="https://bispinor.net/ggnservice/">GGNService API</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-145">
+                                                <a href="https://bispinor.net/calendarservice/">CalendarService API</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-146">
+                                                <a href="https://bispinor.net/emailservice/">EmailService API</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-317">
+                                                <a href="https://bispinor.net/settingserviceapi/">SettingServiceAPI</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-823">
+                                                <a href="https://bispinor.net/user-active-service/">UserActiveService
+                                                    API</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-318">
+                                                <a href="https://bispinor.net/bottelegramserviceapi/">BotTelegramServiceAPI</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="categories-2" class="widget widget_categories"><p class="widget-title">Categories</p>
+                            <ul>
+                                <li class="cat-item cat-item-3"><a href="https://bispinor.net/category/api/">API</a>
+                                </li>
+                                <li class="cat-item cat-item-35"><a
+                                        href="https://bispinor.net/category/%d0%ba%d0%b0%d1%84%d0%ba%d0%b0/">Кафка</a>
+                                </li>
+                                <li class="cat-item cat-item-23"><a
+                                        href="https://bispinor.net/category/%d0%bb%d0%be%d0%b3%d0%b8/">Логи</a>
+                                </li>
+                                <li class="cat-item cat-item-2"><a
+                                        href="https://bispinor.net/category/%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f/">Налаштування</a>
+                                </li>
+                                <li class="cat-item cat-item-17"><a
+                                        href="https://bispinor.net/category/testing/registration-of-test-documentation/">Оформлення
+                                    тестової документації</a>
+                                </li>
+                                <li class="cat-item cat-item-14"><a
+                                        href="https://bispinor.net/category/rules/">Правила</a>
+                                </li>
+                                <li class="cat-item cat-item-15"><a
+                                        href="https://bispinor.net/category/rules/rules-driving-project/">Правила
+                                    ведення проекту</a>
+                                </li>
+                                <li class="cat-item cat-item-18"><a
+                                        href="https://bispinor.net/category/rules/rules-of-documentation/">Правила
+                                    оформлення документації</a>
+                                </li>
+                                <li class="cat-item cat-item-1"><a
+                                        href="https://bispinor.net/category/rules/dev-policy/">Правила роботи з
+                                    кодом</a>
+                                </li>
+                                <li class="cat-item cat-item-22"><a
+                                        href="https://bispinor.net/category/%d0%bf%d1%80%d0%be%d0%bf%d0%be%d0%b7%d0%b8%d1%86%d1%96%d1%97-%d0%b7%d0%bc%d1%96%d0%bd%d0%b8-%d1%81%d0%b5%d1%80%d0%b2%d1%96%d1%81%d1%96%d0%b2/">Пропозиції
+                                    зміни сервісів</a>
+                                </li>
+                                <li class="cat-item cat-item-16"><a href="https://bispinor.net/category/testing/">Тестування</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="recent-posts-2" class="widget widget_recent_entries"><p class="widget-title">Recent
+                            Posts</p>
+                            <ul>
+                                <li>
+                                    <a href="https://bispinor.net/tag-tranfd-for-wipo-xml/">Сповіщення в ВОІВ надання
+                                        охорони після остаточної відмови. Тег TRANFD</a>
+                                </li>
+                                <li>
+                                    <a href="https://bispinor.net/tag-tranfi-for-wipo-xml/">Сповіщення в ВОІВ надання
+                                        охорони після відмови або остаточна відмова. Тег TRANFI</a>
+                                </li>
+                                <li>
+                                    <a href="https://bispinor.net/tag-tranrf-for-wipo-xml/">Сповіщення в ВОІВ попередня
+                                        відмова. Тег TRANRF</a>
+                                </li>
+                                <li>
+                                    <a href="https://bispinor.net/tag-trangp-for-wipo-xml/">Сповіщення в ВОІВ про
+                                        надання охорони. Тег TRANGP</a>
+                                </li>
+                                <li>
+                                    <a href="https://bispinor.net/form-xml-for-wipo/">Формування XML для ВОІВ (WIPO)</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- .site-aside-wrapper .clearfix -->
+
+                </aside><!-- #site-aside -->
+            </div><!-- .wrapper-frame -->
+
+        </div><!-- .wrapper .wrapper-main -->
+
+    </div><!-- #site-main -->
+
+
+    <footer class="site-footer" role="contentinfo">
+
+
+        <div class="wrapper wrapper-copy">
+            <p class="copy">Copyright &copy; 2021 P-ERP. All Rights Reserved. </p>
+            <p class="copy-ilovewp"><span class="theme-credit"> <a href="http://wp-templates.ru/"
+                                                                   title="Шаблоны WordPress">WordPress</a> / <a
+                    href="http://rastenievod.com/" title="Уход за домашними цветами" target="_blank">Цветы</a>
+
+</span></p>
+        </div><!-- .wrapper .wrapper-copy -->
+
+    </footer><!-- .site-footer -->
+
+</div><!-- end #container -->
+
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var edupressStrings = {"slicknav_menu_home": "HOME"};
+    /* ]]> */
+</script>
+<script type='text/javascript'
+        src='https://bispinor.net/wp-content/themes/edupress/edupress/js/edupress.js?ver=20160820'></script>
+<script type='text/javascript' src='https://bispinor.net/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+
+</body>
+</html>
